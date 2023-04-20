@@ -1,10 +1,7 @@
 import 'dart:io';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:mic_music_app/views/search_home.dart';
 
-import 'package:file_picker/file_picker.dart';
-import 'package:flutter_media_metadata/flutter_media_metadata.dart';
 import '../views/stackofCard.dart';
 
 import 'package:transparent_image/transparent_image.dart';
@@ -64,7 +61,18 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SearchScreen(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.search))
+        ],
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: SingleChildScrollView(
@@ -312,6 +320,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
                 "Come Back Home",
@@ -327,7 +336,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  // handle play button press here
+                  // handle back button press here
                 },
               ),
               Container(
@@ -358,7 +367,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  // handle play button press here
+                  // handle next button press here
                 },
               ),
             ],
