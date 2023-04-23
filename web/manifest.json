@@ -1,6 +1,6 @@
 {
-    "name": "mic_music_app",
-    "short_name": "mic_music_app",
+    "name": "micmusic",
+    "short_name": "micmusic",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
