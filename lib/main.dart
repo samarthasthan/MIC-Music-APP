@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:micmusic/views/Accounts.dart';
+import 'package:micmusic/views/Edit.dart';
 import 'package:micmusic/views/Settings.dart';
 
 void main() => runApp(MyApp());
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
           initialRoute: '/',
           routes: {
             '/': (context) =>  Account(),
-            '/settings':(context)  => Settings()
+            '/settings':(context)  => Settings(),
+            '/edit' : (context) => Edit(),
           },
         );
       },

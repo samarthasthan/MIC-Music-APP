@@ -20,6 +20,11 @@ TextTheme textTheme = TextTheme(
       fontWeight: FontWeight.bold,
       color: Color(0xFFEEEEEE),
     ),
+    bodyLarge: GoogleFonts.roboto(
+      fontSize: 16.sp,
+      color: Color(0xFFEEEEEE),
+      fontWeight: FontWeight.normal,
+    ),
     displaySmall: GoogleFonts.roboto(
       fontSize: 14.sp,
       fontWeight: FontWeight.normal,
@@ -28,4 +33,16 @@ TextTheme textTheme = TextTheme(
     bodyMedium: GoogleFonts.quicksand(
         fontSize: 10.sp,
         fontWeight: FontWeight.bold,
-        color: Color(0xFF71737B)));
+        color: Color(0xFF71737B)),
+    bodySmall: GoogleFonts.roboto(
+      fontSize: 14.sp,
+      fontWeight: FontWeight.normal,
+      color: Color(0xFF71737B)
+    ),
+    headlineSmall: GoogleFonts.roboto(
+      fontSize: 14.sp,
+      color: Color(0xFFCBFB5E),
+      fontWeight: FontWeight.normal,
+    )
+    
+        );

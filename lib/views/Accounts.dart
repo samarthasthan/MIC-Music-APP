@@ -124,7 +124,7 @@ class Account extends StatelessWidget {
                               width: 78.w,
                               child: ElevatedButton(
                                   onPressed: () {
-                                    //Handle Edit
+                                    Navigator.pushNamed(context, '/edit');
                                   },
                                   style: ButtonStyle(
                                     backgroundColor:
@@ -163,7 +163,7 @@ class Account extends StatelessWidget {
                                 children: [
                                   Icon(
                                     CustomIcons.playlist,
-                                    color: const  Color(0xFFEEEEEE),
+                                    color: const Color(0xFFEEEEEE),
                                     size: 24.h,
                                   ),
                                   const Spacer(
@@ -362,13 +362,14 @@ class Account extends StatelessWidget {
                         return Row(
                           children: [
                             GestureDetector(
-                              onTap: _accountsController.imagePath[index].handleClick(),
-                              child: Image.asset(
-                                _accountsController.imagePath[index].imagePath,
-                                height: 88.h,
-                                width: 88.h,
-                              )
-                            ),
+                                onTap: _accountsController.imagePath[index]
+                                    .handleClick(),
+                                child: Image.asset(
+                                  _accountsController
+                                      .imagePath[index].imagePath,
+                                  height: 88.h,
+                                  width: 88.h,
+                                )),
                             SizedBox(
                               width: 16.w,
                             )
@@ -388,7 +389,8 @@ class Account extends StatelessWidget {
                         return Row(
                           children: [
                             GestureDetector(
-                              onTap: _accountsController.imagePath[index+4].handleClick(),
+                              onTap: _accountsController.imagePath[index + 4]
+                                  .handleClick(),
                               child: Image.asset(
                                 _accountsController
                                     .imagePath[index + 4].imagePath,
