@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:micmusic/constants.dart';
 import 'package:micmusic/controls/EditController.dart';
 import 'dart:io';
@@ -32,17 +33,45 @@ class Body extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         color: Color(0xFF0E0B1F),
-        padding: EdgeInsets.only(bottom: 70.h),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-          TopPart(),
-          TextButton(
-              onPressed: () {
-                print("Handle Change Password");
-              },
-              child: Text("Change password",style: textTheme.headlineSmall,))
-        ]),
+        padding: EdgeInsets.only(bottom: 10.h),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TopPart(),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Column(
+                  children: [
+                    TextButton(
+                        onPressed: () {
+                          print("Handle Change Password");
+                        },
+                        child: Text(
+                          "Change password",
+                          style: textTheme.headlineSmall,
+                        )),
+                    ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFFCBFB5E)),
+                        onPressed: () {
+                          //Handle Save Changes
+                          print("Save Changes");
+                        },
+                        child: Text(
+                          "Save Changes",
+                          style: GoogleFonts.roboto(
+                            fontSize: 14.sp,
+                            color: Color(0xFF0E0B1F),
+                            fontWeight: FontWeight.normal,
+                          ),
+                        )),
+                  ],
+                )
+              ]),
+        ),
       ),
     );
   }
@@ -83,13 +112,11 @@ class _ProfilePicState extends State<ProfilePic> {
 
   Future<void> _getImage() async {
     //Changing Image
-    print(_image.path);
     final picker = ImagePicker();
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
 
     setState(() {
       if (pickedFile != null) {
-        print(pickedFile.path);
         _image = File(pickedFile.path);
       }
     });
@@ -100,7 +127,6 @@ class _ProfilePicState extends State<ProfilePic> {
     return Stack(children: [
       Container(
         decoration: BoxDecoration(
-          
           boxShadow: [
             BoxShadow(
               color: Color(0xFF000000).withOpacity(0.25),
@@ -123,7 +149,6 @@ class _ProfilePicState extends State<ProfilePic> {
       ),
       Container(
         padding: EdgeInsets.fromLTRB(103.w, 103.h, 0, 0),
-        
         child: CircleAvatar(
           radius: 20.r,
           backgroundColor: Color(0xFFCBFB5E),
@@ -147,13 +172,27 @@ class Display extends StatefulWidget {
 class _DisplayState extends State<Display> {
   final EditController _editController = EditController();
   final TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
   late String _name;
+  late String _email;
+  late String _phonenumber;
+  late String _gender;
+  late DateTime _dob;
+
+  var genderList = ["Male", "Female"];
 
   @override
   void initState() {
     super.initState();
     _textEditingController.text = _editController.name;
+    _emailController.text = _editController.email;
+    _phoneNumberController.text = _editController.phonenumber;
     _name = _editController.name;
+    _email = _editController.email;
+    _phonenumber = _editController.phonenumber;
+    _gender = _editController.gender;
+    _dob = _editController.dob;
   }
 
   @override
@@ -166,6 +205,21 @@ class _DisplayState extends State<Display> {
     setState(() {
       _textEditingController.text = _name;
     });
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: _dob,
+      firstDate: DateTime(1900),
+      lastDate: DateTime(2100),
+    );
+
+    if (picked != null && picked != _dob) {
+      setState(() {
+        _dob = picked;
+      });
+    }
   }
 
   @override
@@ -183,10 +237,10 @@ class _DisplayState extends State<Display> {
           ]),
       child: Column(children: [
         SizedBox(
-          height: 143.h,
+          height: 110.h,
         ),
         Container(
-          padding: EdgeInsets.fromLTRB(17.w, 17.h, 17.w, 17.h),
+          padding: EdgeInsets.fromLTRB(17.w, 0.h, 17.w, 0.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -194,10 +248,25 @@ class _DisplayState extends State<Display> {
                 "Username",
                 style: textTheme.bodySmall,
               ),
-              Text(
-                _editController.name,
-                style: textTheme.bodyLarge,
-              )
+              SizedBox(
+                width: 110.w,
+                child: GestureDetector(
+                  onTap: _onTextTap,
+                  child: TextField(
+                    style: textTheme.bodyLarge,
+                    controller: _textEditingController,
+                    autofocus: false,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        _name = value;
+                      });
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -208,7 +277,7 @@ class _DisplayState extends State<Display> {
           ),
         ),
         Container(
-          padding: EdgeInsets.fromLTRB(17.w, 17.h, 17.w, 17.h),
+          padding: EdgeInsets.fromLTRB(17.w, 0.h, 17.w, 0.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -216,10 +285,25 @@ class _DisplayState extends State<Display> {
                 "Email",
                 style: textTheme.bodySmall,
               ),
-              Text(
-                _editController.email,
-                style: textTheme.bodyLarge,
-              )
+              SizedBox(
+                width: 160.w,
+                child: GestureDetector(
+                  onTap: _onTextTap,
+                  child: TextField(
+                    style: textTheme.bodyLarge,
+                    controller: _emailController,
+                    autofocus: false,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        _email = value;
+                      });
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -230,7 +314,7 @@ class _DisplayState extends State<Display> {
           ),
         ),
         Container(
-          padding: EdgeInsets.fromLTRB(17.w, 17.h, 17.w, 17.h),
+          padding: EdgeInsets.fromLTRB(17.w, 0.h, 17.w, 0.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -238,10 +322,25 @@ class _DisplayState extends State<Display> {
                 "Phone",
                 style: textTheme.bodySmall,
               ),
-              Text(
-                _editController.phonenumber,
-                style: textTheme.bodyLarge,
-              )
+              SizedBox(
+                width: 110.w,
+                child: GestureDetector(
+                  onTap: _onTextTap,
+                  child: TextField(
+                    style: textTheme.bodyLarge,
+                    controller: _phoneNumberController,
+                    autofocus: false,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        _phonenumber = value;
+                      });
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -252,7 +351,7 @@ class _DisplayState extends State<Display> {
           ),
         ),
         Container(
-          padding: EdgeInsets.fromLTRB(17.w, 17.h, 17.w, 17.h),
+          padding: EdgeInsets.fromLTRB(17.w, 0.h, 17.w, 0.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -260,10 +359,24 @@ class _DisplayState extends State<Display> {
                 "Gender",
                 style: textTheme.bodySmall,
               ),
-              Text(
-                _editController.gender,
-                style: textTheme.bodyLarge,
-              )
+              DropdownButton(
+                  value: _gender,
+                  dropdownColor: Color(0xFF0E0B1F),
+                  items: genderList.map((String items) {
+                    return DropdownMenuItem(
+                      value: items,
+                      child: Text(items),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      _gender = newValue!;
+                    });
+                  })
+              // Text(
+              //   _editController.gender,
+              //   style: textTheme.bodyLarge,
+              // )
             ],
           ),
         ),
@@ -282,9 +395,12 @@ class _DisplayState extends State<Display> {
                 "Date of birth",
                 style: textTheme.bodySmall,
               ),
-              Text(
-                "${_editController.dob.day}/${_editController.dob.month}/${_editController.dob.year}",
-                style: textTheme.bodyLarge,
+              GestureDetector(
+                onTap: () => _selectDate(context),
+                child: Text(
+                  "${_dob.day}/${_dob.month}/${_dob.year}",
+                  style: textTheme.bodyLarge,
+                ),
               )
             ],
           ),
@@ -293,23 +409,3 @@ class _DisplayState extends State<Display> {
     );
   }
 }
-
-// SizedBox(
-//                 width: 110.w,
-//                 child: GestureDetector(
-//                   onTap: _onTextTap,
-//                   child: TextField(
-//                     style: textTheme.bodyLarge,
-//                     controller: _textEditingController,
-//                     autofocus: false,
-//                     decoration: InputDecoration(
-//                       border: InputBorder.none,
-//                     ),
-//                     onChanged: (value) {
-//                       setState(() {
-//                         _name = value;
-//                       });
-//                     },
-//                   ),
-//                 ),
-//               ),
