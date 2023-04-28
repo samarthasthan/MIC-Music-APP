@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:micmusic/views/Accounts.dart';
 import 'package:micmusic/views/Album.dart';
 import 'package:micmusic/views/Edit.dart';
+import 'package:micmusic/views/Playlist.dart';
 import 'package:micmusic/views/Settings.dart';
 
 void main() => runApp(MyApp());
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
             '/settings':(context)  => const Settings(),
             '/edit' : (context) => const Edit(),
             '/accounts/album' : (context) => Album(),
+            '/accounts/playlist' : (context) => Playlist(),
           },
         );
       },

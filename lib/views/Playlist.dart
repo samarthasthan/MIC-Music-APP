@@ -1,18 +1,24 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:micmusic/constants.dart';
-import 'package:micmusic/controls/AlbumController.dart';
-import 'package:micmusic/models/AlbumModel.dart';
+import 'package:micmusic/controls/PlaylistController.dart';
+import 'package:micmusic/models/PlaylistModel.dart';
 
-class Album extends StatelessWidget {
+class Playlist extends StatelessWidget {
+  const Playlist({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Album"),
+        title: Text("Playlist"),
         centerTitle: true,
-        backgroundColor: Color(0xFF0E0B1F),
+        backgroundColor: const Color(0xFF0E0B1F),
         elevation: 0.0,
       ),
       body: Body(),
@@ -27,26 +33,25 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   final TextEditingController _searchController = TextEditingController();
-
-  final AlbumController _albumController = AlbumController();
-
-  late List<AlbumForm> _albumList;
+  final PlaylistController _playlistController = PlaylistController();
+  late List<PlaylistForm> playList;
 
   @override
   void initState() {
-    _albumList = _albumController.albumList;
+    playList = _playlistController.playlistList;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
+        child: Container(
       height: double.infinity,
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 21.w),
       color: const Color(0xFF0E0B1F),
+      padding: EdgeInsets.symmetric(horizontal: 21.w),
       child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
             TextField(
@@ -70,10 +75,14 @@ class _BodyState extends State<Body> {
                       borderSide: const BorderSide(color: Color(0xFF363942)))),
               onChanged: (value) {
                 setState(() {
-                  _albumList = _albumController.albumList
-                      .where((album) => (album.title
-                          .toLowerCase()
-                          .contains(value.toLowerCase())) || (album.creator.toLowerCase().contains(value.toLowerCase())))
+                  playList = _playlistController.playlistList
+                      .where((playlist) =>
+                          (playlist.title
+                              .toLowerCase()
+                              .contains(value.toLowerCase())) ||
+                          (playlist.creator
+                              .toLowerCase()
+                              .contains(value.toLowerCase())))
                       .toList();
                 });
               },
@@ -81,9 +90,20 @@ class _BodyState extends State<Body> {
             SizedBox(
               height: 30.h,
             ),
-            AlbumList(
-              listAlbum: _albumList,
-            ),
+            PlaylistList(playlistList: playList),
+            TextButton(
+                onPressed: () {
+                  //Handle Add Playlist
+                },
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(const Color(0xFFCBFB5E)),
+                ),
+                child: Text(
+                  "Add New Playlist",
+                  style: TextStyle(
+                      fontSize: 16.sp, color: const Color(0xFF20242F), fontWeight: FontWeight.normal, ),
+                ))
           ],
         ),
       ),
@@ -91,20 +111,20 @@ class _BodyState extends State<Body> {
   }
 }
 
-class AlbumList extends StatefulWidget {
-  final List<AlbumForm> listAlbum;
-  AlbumList({super.key, required this.listAlbum});
+class PlaylistList extends StatefulWidget {
+  final List<PlaylistForm> playlistList;
+  const PlaylistList({super.key, required this.playlistList});
 
   @override
-  State<AlbumList> createState() => _AlbumListState();
+  State<PlaylistList> createState() => _PlaylistListState();
 }
 
-class _AlbumListState extends State<AlbumList> {
+class _PlaylistListState extends State<PlaylistList> {
   @override
   Widget build(BuildContext context) {
-    return (widget.listAlbum.length != 0 ) ? ListView.builder(
+    return (widget.playlistList.length !=0 ) ?ListView.builder(
         shrinkWrap: true,
-        itemCount: widget.listAlbum.length,
+        itemCount: widget.playlistList.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
             padding: EdgeInsets.only(bottom: 10.h),
@@ -112,17 +132,10 @@ class _AlbumListState extends State<AlbumList> {
               children: [
                 Row(
                   children: [
-                    Text(
-                      index < 10 ? "0${index + 1}" : "${index + 1}",
-                      style: serialNo,
-                    ),
-                    SizedBox(
-                      width: 20.w,
-                    ),
                     Image.asset(
-                      widget.listAlbum[index].imagePath,
-                      height: 32.h,
-                      width: 32.w,
+                      widget.playlistList[index].imagePath,
+                      height: 40.h,
+                      width: 40.w,
                     ),
                     SizedBox(
                       width: 16.w,
@@ -131,43 +144,23 @@ class _AlbumListState extends State<AlbumList> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.listAlbum[index].title,
+                          widget.playlistList[index].title,
                           style: textTheme.bodyLarge,
                         ),
                         SizedBox(
                           height: 2.h,
                         ),
                         Text(
-                          widget.listAlbum[index].creator,
+                          widget.playlistList[index].creator,
                           style: creatorStyle,
                         )
                       ],
                     ),
-                    const Spacer(),
-                    IconButton(
-                        onPressed: () {
-                          //handle OnPress
-                        },
-                        icon: Icon(Icons.more_horiz,
-                            size: 24.h, color: Color(0xFFFFFFFF)))
                   ],
                 ),
                 SizedBox(
                   height: 10.h,
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 79.w,
-                    ),
-                    Expanded(
-                      child: Container(
-                        color: const Color(0xFFFFFFFF),
-                        height: 0.5.h,
-                      ),
-                    )
-                  ],
-                )
               ],
             ),
           );
@@ -177,7 +170,7 @@ class _AlbumListState extends State<AlbumList> {
           height: 50.h,
           child: Text("No results found"),
         )
-        ;
+        ; 
+    ;
   }
 }
-

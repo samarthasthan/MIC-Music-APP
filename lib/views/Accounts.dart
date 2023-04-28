@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:micmusic/Controls/AccountsController.dart';
 import 'package:micmusic/constants.dart';
 import '../custom_icons_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Account extends StatelessWidget {
   final AccountsController _accountsController = AccountsController();
@@ -131,9 +132,12 @@ class Account extends StatelessWidget {
                                         MaterialStateProperty.all<Color>(
                                             const Color(0xFFCBFB5E)),
                                   ),
-                                  child: const Text(
+                                  child: Text(
                                     "Edit",
-                                    style: TextStyle(color: Color(0xFF20242F)),
+                                    style: GoogleFonts.roboto(
+                                      fontSize: 16.sp,
+                                      color: Color(0xFF20242F)
+                                    ),
                                   )),
                             )
                           ],
@@ -156,30 +160,34 @@ class Account extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    CustomIcons.playlist,
-                                    color: const Color(0xFFEEEEEE),
-                                    size: 24.h,
-                                  ),
-                                  const Spacer(
-                                    flex: 1,
-                                  ),
-                                  Text(
-                                    "My playlist",
-                                    style: textTheme.displaySmall,
-                                  ),
-                                  Spacer(flex: 22),
-                                  Icon(Icons.chevron_right,
-                                      color: Color(0xFFEEEEEE), size: 24.h)
-                                ],
-                              ),
-                            )
-                          ],
+                        GestureDetector(
+                          onTap: () => Navigator.pushNamed(
+                              context, '/accounts/playlist'),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      CustomIcons.playlist,
+                                      color: const Color(0xFFEEEEEE),
+                                      size: 24.h,
+                                    ),
+                                    const Spacer(
+                                      flex: 1,
+                                    ),
+                                    Text(
+                                      "My playlist",
+                                      style: textTheme.displaySmall,
+                                    ),
+                                    Spacer(flex: 22),
+                                    Icon(Icons.chevron_right,
+                                        color: Color(0xFFEEEEEE), size: 24.h)
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: 10.h,
@@ -195,7 +203,8 @@ class Account extends StatelessWidget {
                     Column(
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.pushNamed(context, '/accounts/album'),
+                          onTap: () =>
+                              Navigator.pushNamed(context, '/accounts/album'),
                           child: Row(
                             children: [
                               Expanded(
