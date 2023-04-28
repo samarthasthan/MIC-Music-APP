@@ -1,6 +1,6 @@
 {
-    "name": "mic_music_app",
-    "short_name": "mic_music_app",
+    "name": "geezo_music_ui",
+    "short_name": "geezo_music_ui",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

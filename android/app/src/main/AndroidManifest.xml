@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mic_music_app">
+    package="com.example.geezo_music_ui">
    <application
-        android:label="mic_music_app"
+        android:label="geezo_music_ui"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

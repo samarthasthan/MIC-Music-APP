@@ -1,4 +1,4 @@
-# mic_music_app
+# geezo_music_ui
 
 A new Flutter project.
 

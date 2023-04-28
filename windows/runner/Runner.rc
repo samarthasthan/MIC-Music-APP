@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "mic_music_app" "\0"
+            VALUE "FileDescription", "geezo_music_ui" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "mic_music_app" "\0"
+            VALUE "InternalName", "geezo_music_ui" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "mic_music_app.exe" "\0"
-            VALUE "ProductName", "mic_music_app" "\0"
+            VALUE "OriginalFilename", "geezo_music_ui.exe" "\0"
+            VALUE "ProductName", "geezo_music_ui" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
