@@ -194,30 +194,34 @@ class Account extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    CustomIcons.album,
-                                    color: Color(0xFFEEEEEE),
-                                    size: 24.h,
-                                  ),
-                                  const Spacer(
-                                    flex: 1,
-                                  ),
-                                  Text(
-                                    "Album",
-                                    style: textTheme.displaySmall,
-                                  ),
-                                  Spacer(flex: 22),
-                                  Icon(Icons.chevron_right,
-                                      color: Color(0xFFEEEEEE), size: 24.h)
-                                ],
-                              ),
-                            )
-                          ],
+                        GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, '/accounts/album'),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      CustomIcons.album,
+                                      color: Color(0xFFEEEEEE),
+                                      size: 24.h,
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Container(),
+                                    ),
+                                    Text(
+                                      "Album",
+                                      style: textTheme.displaySmall,
+                                    ),
+                                    Expanded(flex: 22, child: Container()),
+                                    Icon(Icons.chevron_right,
+                                        color: Color(0xFFEEEEEE), size: 24.h)
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: 10.h,

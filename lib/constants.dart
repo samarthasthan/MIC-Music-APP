@@ -31,18 +31,23 @@ TextTheme textTheme = TextTheme(
       color: Color(0xFFEEEEEE),
     ),
     bodyMedium: GoogleFonts.quicksand(
-        fontSize: 10.sp,
-        fontWeight: FontWeight.bold,
-        color: Color(0xFF71737B)),
+        fontSize: 10.sp, fontWeight: FontWeight.bold, color: Color(0xFF71737B)),
     bodySmall: GoogleFonts.roboto(
-      fontSize: 14.sp,
-      fontWeight: FontWeight.normal,
-      color: Color(0xFF71737B)
-    ),
+        fontSize: 14.sp,
+        fontWeight: FontWeight.normal,
+        color: Color(0xFF71737B)),
     headlineSmall: GoogleFonts.roboto(
       fontSize: 14.sp,
       color: Color(0xFFCBFB5E),
       fontWeight: FontWeight.normal,
-    )
-    
-        );
+    ));
+
+TextStyle serialNo = GoogleFonts.roboto(
+    fontSize: 14.sp,
+    color: const Color(0xFFFFFFFF),
+    fontWeight: FontWeight.normal);
+
+TextStyle creatorStyle = GoogleFonts.roboto(
+    fontSize: 12.sp,
+    color: const Color(0xFF71737B),
+    fontWeight: FontWeight.normal);
