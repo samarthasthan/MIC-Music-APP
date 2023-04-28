@@ -281,40 +281,43 @@ class Account extends StatelessWidget {
                     SizedBox(
                       height: 10.h,
                     ),
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    CustomIcons.artist,
-                                    color: Color(0xFFEEEEEE),
-                                    size: 24.h,
-                                  ),
-                                  const Spacer(
-                                    flex: 1,
-                                  ),
-                                  Text(
-                                    "Artist",
-                                    style: textTheme.displaySmall,
-                                  ),
-                                  const Spacer(flex: 22),
-                                  Icon(Icons.chevron_right,
-                                      color: Color(0xFFEEEEEE), size: 24.h)
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        const Divider(
-                          color: Color(0xFFFFFFFF),
-                        ),
-                      ],
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, "/accounts/artists"),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      CustomIcons.artist,
+                                      color: Color(0xFFEEEEEE),
+                                      size: 24.h,
+                                    ),
+                                    const Spacer(
+                                      flex: 1,
+                                    ),
+                                    Text(
+                                      "Artist",
+                                      style: textTheme.displaySmall,
+                                    ),
+                                    const Spacer(flex: 22),
+                                    Icon(Icons.chevron_right,
+                                        color: Color(0xFFEEEEEE), size: 24.h)
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          const Divider(
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 10.h,
