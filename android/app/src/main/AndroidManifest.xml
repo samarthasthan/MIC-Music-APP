@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.music_streaming">
+
+    package="com.example.micmusic">
    <application
-        android:label="music_streaming"
+        android:label="micmusic"
+
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
