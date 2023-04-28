@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mic_music_app">
+    package="com.example.micmusic">
    <application
-        android:label="mic_music_app"
+        android:label="micmusic"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

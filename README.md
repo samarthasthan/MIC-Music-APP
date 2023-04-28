@@ -1,4 +1,4 @@
-# mic_music_app
+# micmusic
 
 A new Flutter project.
 
