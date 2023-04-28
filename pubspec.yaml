@@ -30,6 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_screenutil: ^5.7.0
+  google_fonts: ^4.0.3
+  flutter_media_metadata: ^1.0.0+1
+  mvc_pattern: ^8.12.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -39,6 +43,10 @@ dependencies:
   flutter_screenutil: ^5.7.0
   google_fonts: ^4.0.3
   image_picker: ^0.8.7+4
+  file_picker: ^5.2.9
+  drop_shadow_image: ^0.9.1
+  transparent_image: ^2.0.1
+
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +71,7 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+
   assets:
     - assets/images/ProfilePic.png
     - assets/img/DP.png
@@ -90,6 +99,9 @@ flutter:
     - assets/images/Image13.png
     - assets/images/Image14.png
   #   - images/a_dot_ham.jpeg
+
+  # assets:
+  #   - assets/music_data/In The End Best Song Download(SongsZilla.Net).mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
