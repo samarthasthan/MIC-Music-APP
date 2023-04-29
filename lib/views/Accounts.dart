@@ -15,6 +15,7 @@ class Account extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           "Account",
           style: textTheme.displayLarge,
@@ -135,9 +136,8 @@ class Account extends StatelessWidget {
                                   child: Text(
                                     "Edit",
                                     style: GoogleFonts.roboto(
-                                      fontSize: 16.sp,
-                                      color: Color(0xFF20242F)
-                                    ),
+                                        fontSize: 16.sp,
+                                        color: Color(0xFF20242F)),
                                   )),
                             )
                           ],
@@ -282,7 +282,8 @@ class Account extends StatelessWidget {
                       height: 10.h,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, "/accounts/artists"),
+                      onTap: () =>
+                          Navigator.pushNamed(context, "/accounts/artists"),
                       child: Column(
                         children: [
                           Row(
@@ -325,7 +326,8 @@ class Account extends StatelessWidget {
                     Column(
                       children: [
                         GestureDetector(
-                          onTap: () => Navigator.pushNamed(context, '/accounts/songs'),
+                          onTap: () =>
+                              Navigator.pushNamed(context, '/accounts/songs'),
                           child: Row(
                             children: [
                               Expanded(
@@ -503,7 +505,7 @@ class Account extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    // Mavigate to Radio
+                    Navigator.pushNamed(context, "/radio");
                   },
                 ),
                 GestureDetector(
