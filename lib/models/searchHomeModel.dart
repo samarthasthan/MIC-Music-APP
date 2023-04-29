@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mic_music_app/views/searchHome.dart';
+import '/views/searchHome.dart';
 
 class searchHomeModel {
   static final List<String> _historyButton = [

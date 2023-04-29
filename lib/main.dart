@@ -9,11 +9,10 @@ import 'package:micmusic/views/Edit.dart';
 import 'package:micmusic/views/Playlist.dart';
 import 'package:micmusic/views/Settings.dart';
 import 'package:micmusic/views/Song.dart';
-
-import 'package:mic_music_app/views/homePageView.dart';
+import 'views/loginPage.dart';
+import './views/homePageView.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drop_shadow_image/drop_shadow_image.dart';
-
 
 void main() => runApp(MyApp());
 
@@ -28,13 +27,13 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context , child) {
+      builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'MIC Music App',
           theme: ThemeData(
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-             colorScheme: ColorScheme.fromSeed(
+            colorScheme: ColorScheme.fromSeed(
               seedColor: Color.fromARGB(14, 11, 31, 47),
               primary: Color(0xFF0E0B1F),
               secondary: Color(0xFFCBFB5E),
@@ -44,18 +43,17 @@ class MyApp extends StatelessWidget {
           home: child,
           initialRoute: '/',
           routes: {
-            '/': (context) =>  Account(),
-            '/settings':(context)  => const Settings(),
-            '/edit' : (context) => const Edit(),
-            '/accounts/album' : (context) => Album(),
-            '/accounts/playlist' : (context) => const Playlist(),
-            '/accounts/songs' : (context) => const Song(),
-            '/accounts/artists' : (context) => const Artist(),
+            '/': (context) => Loginpage(),
+            '/accounts': (context) => Account(),
+            '/settings': (context) => const Settings(),
+            '/edit': (context) => const Edit(),
+            '/accounts/album': (context) => Album(),
+            '/accounts/playlist': (context) => const Playlist(),
+            '/accounts/songs': (context) => const Song(),
+            '/accounts/artists': (context) => const Artist(),
           },
         );
       },
-      child: HomePageView(),
-
     );
   }
 }

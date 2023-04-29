@@ -1,7 +1,7 @@
 // ignore_for_file: unused_import, unnecessary_import
 // ignore: implementation_imports,
 import 'dart:math';
-
+import '../verify/verify1.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import '../widgets/TextInput.dart';
@@ -13,7 +13,7 @@ import '../homepage.dart';
 import 'signUpPage.dart';
 import '../widgets/signButton.dart';
 import '/views/loginPage.dart';
-import 'package:music_streaming/controllers/photosController.dart';
+import '/controllers/photosController.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -26,6 +26,12 @@ class _SignUpPageState extends State<SignUpPage> {
   void enterLoginPage(BuildContext ontext) {
     Navigator.of(context).pop(MaterialPageRoute(builder: (context) {
       return const Loginpage();
+    }));
+  }
+
+  void enterVerifyPage(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      return const VerifyPage1();
     }));
   }
 
@@ -57,7 +63,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: TextStyle(
                     fontSize: 36.sp,
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).canvasColor,
                   ),
                 ),
                 SizedBox(
@@ -86,7 +92,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 Center(
                     child: SignUPinButton(
-                        buttonText: 'Sign Up', changePage: () {})),
+                        buttonText: 'Sign Up', changePage: enterVerifyPage)),
                 SizedBox(
                   height: 30.h,
                 ),
@@ -103,8 +109,8 @@ class _SignUpPageState extends State<SignUpPage> {
                         "Sign In",
                         style: TextStyle(
                             // color: const Color.fromARGB(255, 255, 255, 255),
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 16.sp,
+                            color: Theme.of(context).canvasColor,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.w700),
                       ),
                     ),

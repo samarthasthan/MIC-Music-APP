@@ -4,14 +4,14 @@ import 'dart:math';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
-import 'package:music_streaming/Views/forgetPassword/forgetPwPage2.dart';
+import '/Views/forgetPassword/forgetPwPage2.dart';
 import '../widgets/TextInput.dart';
 import 'package:flutter/src/widgets/framework.dart';
 // ignore: implementation_imports,
 import 'package:flutter/src/widgets/placeholder.dart';
 import '../widgets/sign_up_field.dart';
 import '../homepage.dart';
-import 'package:music_streaming/Views/signUp/signUpPage.dart';
+import '/Views/signUp/signUpPage.dart';
 import '../widgets/signButton.dart';
 import '../loginPage.dart';
 
@@ -59,7 +59,7 @@ class FogetPw1 extends StatelessWidget {
                 Text(
                   'Forgot Password ? ',
                   style: TextStyle(
-                    fontSize: 28.sp,
+                    fontSize: 30.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -68,12 +68,12 @@ class FogetPw1 extends StatelessWidget {
                   height: 40.h,
                 ),
                 SizedBox(
-                  height: 60.h,
+                  height: 70.h,
                   width: 250.w,
                   child: Text(
                     "If you need help resetting your password, we can help by sending you a link to reset it.",
                     style: TextStyle(
-                      fontSize: 14.sp,
+                      fontSize: 19.sp,
                       color: const Color.fromARGB(255, 138, 137, 137),
                     ),
                     maxLines: 3,

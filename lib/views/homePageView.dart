@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mic_music_app/constants.dart';
-import 'package:mic_music_app/controllers/homepageController.dart';
-import 'package:mic_music_app/views/searchHome.dart';
+import '/constants.dart';
+import '/controllers/homepageController.dart';
+import '/views/searchHome.dart';
 
 import 'package:transparent_image/transparent_image.dart';
 
@@ -290,32 +290,7 @@ class _HomePageViewState extends State<HomePageView> {
           ],
         )
       ],
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed, // Fixed
-        backgroundColor: brand2,
-        selectedItemColor: brand1,
-        unselectedItemColor: neutral2,
-        onTap: (_) {},
-        currentIndex: 0,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            label: 'Categories',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.place_outlined),
-            label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.radio_outlined),
-            label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Favorites',
-          ),
-        ],
-      ),
+      
     );
   }
 }

@@ -44,7 +44,7 @@ class ForgetPw2 extends StatelessWidget {
                     child: IconButton(
                       onPressed: () => returnBack1(context),
                       icon: Icon(Icons.arrow_back,
-                          color: Theme.of(context).primaryColor),
+                          color: Theme.of(context).canvasColor),
                     ),
                   )
                 ],
@@ -55,21 +55,21 @@ class ForgetPw2 extends StatelessWidget {
               Text(
                 'Forgot Password ? ',
                 style: TextStyle(
-                  fontSize: 28.sp,
+                  fontSize: 30.sp,
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).canvasColor,
                 ),
               ),
               SizedBox(
                 height: 40.h,
               ),
               SizedBox(
-                height: 60.h,
+                height: 70.h,
                 width: 250.w,
                 child: Text(
                   "If you need help resetting your password, we can help by sending you a link to reset it.",
                   style: TextStyle(
-                    fontSize: 14.sp,
+                    fontSize: 19.sp,
                     color: const Color.fromARGB(255, 138, 137, 137),
                   ),
                   maxLines: 3,
@@ -79,6 +79,9 @@ class ForgetPw2 extends StatelessWidget {
                 height: 80.h,
               ),
               const PasswordInputField(),
+              SizedBox(
+                height: 17.h,
+              ),
               const TextInput(
                   labelText: 'Confirm Password',
                   prefixIcon: Icons.lock_outline),

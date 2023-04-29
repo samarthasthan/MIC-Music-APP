@@ -2,9 +2,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:micmusic/views/TabScreen.dart';
 // ignore: implementation_imports,
 import '../widgets/signButton.dart' show SignUPinButton;
 import 'verify2.dart';
+import '../homePageView.dart';
 
 class VerifyPage3 extends StatelessWidget {
   const VerifyPage3({super.key});
@@ -13,6 +15,12 @@ class VerifyPage3 extends StatelessWidget {
     Navigator.of(context).pop(MaterialPageRoute(builder: (context) {
       return const VerifyPage2();
     }));
+  }
+
+  void enterHomepage(BuildContext context) {
+    Navigator.of(context).popUntil((route) => route.isFirst);
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const TabScreenView()));
   }
 
   @override
@@ -36,39 +44,39 @@ class VerifyPage3 extends StatelessWidget {
                   child: IconButton(
                     onPressed: () => returnBack(context),
                     icon: Icon(Icons.arrow_back,
-                        color: Theme.of(context).primaryColor),
+                        color: Theme.of(context).canvasColor),
                   ),
                 ),
                 SizedBox(
-                  height: 110.h,
+                  height: 80.h,
                 ),
                 Center(
                   child: Text(
                     "Almost Done!",
                     style: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 28.sp,
+                        color: Theme.of(context).canvasColor,
+                        fontSize: 40.sp,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
                 SizedBox(
-                  height: 10.h,
+                  height: 30.h,
                 ),
                 Center(
                   child: Text(
                     "Please Verify Your Phone",
                     style: TextStyle(
                       color: const Color.fromARGB(255, 138, 137, 137),
-                      fontSize: 14.sp,
+                      fontSize: 18.sp,
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 65.h,
+                  height: 80.h,
                 ),
                 Center(
                     child: SignUPinButton(
-                        buttonText: 'CONTINUE', changePage: () {})),
+                        buttonText: 'CONTINUE', changePage: enterHomepage)),
               ],
             ),
           ),

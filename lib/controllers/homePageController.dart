@@ -1,4 +1,4 @@
-import 'package:mic_music_app/models/homepageModel.dart';
+import '/models/homepageModel.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 class HomePageController extends ControllerMVC {
@@ -14,6 +14,6 @@ class HomePageController extends ControllerMVC {
   List<String> get imageUrl => HomePageModel.imageUrl;
   String get imageUrlWeekly => HomePageModel.imageUrlWeekly;
   List<Map<String, String>> get weekly => HomePageModel.weekly;
-  
+
   List<Map<String, String>> get recentMusic => HomePageModel.recentMusic;
 }
