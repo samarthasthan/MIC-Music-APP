@@ -6,6 +6,7 @@ import 'package:micmusic/views/Artist.dart';
 import 'package:micmusic/views/Edit.dart';
 import 'package:micmusic/views/Playlist.dart';
 import 'package:micmusic/views/Radio.dart';
+import 'package:micmusic/views/RadioPlay.dart';
 import 'package:micmusic/views/Settings.dart';
 import 'package:micmusic/views/Song.dart';
 
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
             '/accounts/songs' : (context) => const Song(),
             '/accounts/artists' : (context) => const Artist(),
             '/radio' : (context) => const RadioView(),
+            '/radio/play' : (context) => const RadioPlay(),
           },
         );
       },

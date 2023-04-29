@@ -11,4 +11,6 @@ class RadioController extends ControllerMVC {
   RadioController._();
 
   List<RadioImageForm> get radioImageList => RadioModel.radioImageList;
+
+  List<RadioPopularForm> get radioPopularList => RadioModel.radioPopularList;
 }
