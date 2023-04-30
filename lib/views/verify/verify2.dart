@@ -43,7 +43,7 @@ class VerifyPage2 extends StatelessWidget {
                   child: IconButton(
                     onPressed: () => returnBack(context),
                     icon: Icon(Icons.arrow_back,
-                        color: Theme.of(context).primaryColor),
+                        color: Theme.of(context).canvasColor),
                   ),
                 ),
                 SizedBox(
@@ -56,7 +56,7 @@ class VerifyPage2 extends StatelessWidget {
                     "Verify Phone Number",
                     style: TextStyle(
                         fontSize: 28.sp,
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).canvasColor,
                         fontWeight: FontWeight.bold),
                     maxLines: 3,
                   ),
@@ -101,7 +101,7 @@ class VerifyPage2 extends StatelessWidget {
                     child: Text(
                       "Resent Code",
                       style: TextStyle(
-                          color: const Color(0xFFCBFB5E), fontSize: 13.sp),
+                          color: const Color(0xFFCBFB5E), fontSize: 16.sp),
                     ),
                   ),
                 )

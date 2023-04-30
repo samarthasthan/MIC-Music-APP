@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mic_music_app/constants.dart';
-import 'package:mic_music_app/controllers/searchHomeController.dart';
+import '../constants.dart';
+import '../controllers/searchHomeController.dart';
 import 'dart:ui';
 
 class SearchScreen extends StatefulWidget {

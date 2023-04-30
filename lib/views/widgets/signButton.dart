@@ -21,6 +21,7 @@ class SignUPinButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () => changePage(context),
         style: ElevatedButton.styleFrom(
+          shape: const RoundedRectangleBorder(side: BorderSide.none),
           backgroundColor: const Color(0xFFCBFB5E),
           // shape: ,
         ),
@@ -28,7 +29,7 @@ class SignUPinButton extends StatelessWidget {
           buttonText,
           style: TextStyle(
               color: Colors.black,
-              fontSize: 16.sp,
+              fontSize: 20.sp,
               fontWeight: FontWeight.w700),
         ),
       ),

@@ -1,7 +1,7 @@
-import 'package:mic_music_app/models/homepageModel.dart';
-import 'package:mic_music_app/views/searchHome.dart';
+import '/models/homepageModel.dart';
+import '/views/searchHome.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
-import 'package:mic_music_app/models/searchHomeModel.dart';
+import '/models/searchHomeModel.dart';
 
 class SearchHomeController extends ControllerMVC {
   factory SearchHomeController() {

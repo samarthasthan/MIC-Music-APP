@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:micmusic/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PasswordInputField extends StatefulWidget {
   const PasswordInputField({super.key});
@@ -18,12 +20,15 @@ class _PasswordInputFieldState extends State<PasswordInputField> {
     }
 
     return TextFormField(
-      style: const TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.white),
       obscureText: !_passwordVisible,
       decoration: InputDecoration(
-        label: const Text(
+        focusedBorder:
+            UnderlineInputBorder(borderSide: BorderSide(color: neutral1)),
+        label: Text(
           'Password',
-          style: TextStyle(color: Color.fromARGB(255, 138, 137, 137)),
+          style: TextStyle(
+              color: Color.fromARGB(255, 138, 137, 137), fontSize: 18.sp),
         ),
         prefixIcon: const Icon(Icons.lock_open_rounded),
         prefixIconColor: const Color.fromARGB(255, 138, 137, 137),

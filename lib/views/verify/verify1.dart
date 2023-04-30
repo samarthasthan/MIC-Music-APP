@@ -42,7 +42,7 @@ class VerifyPage1 extends StatelessWidget {
                   child: IconButton(
                     onPressed: () => returnBack(context),
                     icon: Icon(Icons.arrow_back,
-                        color: Theme.of(context).primaryColor),
+                        color: Theme.of(context).canvasColor),
                   ),
                 ),
                 SizedBox(
@@ -54,8 +54,8 @@ class VerifyPage1 extends StatelessWidget {
                   child: Text(
                     "To continue enter your phone number",
                     style: TextStyle(
-                        fontSize: 28.sp,
-                        color: Theme.of(context).primaryColor,
+                        fontSize: 29.sp,
+                        color: Theme.of(context).canvasColor,
                         fontWeight: FontWeight.bold),
                     maxLines: 4,
                   ),

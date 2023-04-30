@@ -1,6 +1,8 @@
 // ignore_for_file: unused_import, unnecessary_import
 // ignore: implementation_imports,
 import 'dart:math';
+import 'package:micmusic/constants.dart';
+
 import '../controllers/photosController.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +12,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import './widgets/sign_up_field.dart';
 import './homepage.dart';
-import 'package:music_streaming/Views/signUp/signUpPage.dart';
+import './signUp/signUpPage.dart';
 import './widgets/signButton.dart';
 import 'verify/verify1.dart';
 
@@ -75,7 +77,7 @@ class _LoginpageState extends State<Loginpage> {
                         style: TextStyle(
                           fontSize: 36.sp,
                           fontWeight: FontWeight.bold,
-                          color: Theme.of(context).primaryColor,
+                          color: neutral1,
                         ),
                       ),
                       SizedBox(
@@ -92,7 +94,7 @@ class _LoginpageState extends State<Loginpage> {
                                 child: Text(
                                   "Forget Password ? ",
                                   style: TextStyle(
-                                      fontSize: 14.sp,
+                                      fontSize: 17.sp,
                                       color: const Color.fromARGB(
                                           255, 138, 137, 137),
                                       fontWeight: FontWeight.w400),
@@ -125,7 +127,7 @@ class _LoginpageState extends State<Loginpage> {
                           Text(
                             ' Or Connect with',
                             style: TextStyle(
-                              fontSize: 11.sp,
+                              fontSize: 13.sp,
                               fontWeight: FontWeight.bold,
                               color: const Color.fromARGB(255, 138, 137, 137),
                             ),
@@ -146,20 +148,20 @@ class _LoginpageState extends State<Loginpage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
-                            iconSize: 20,
+                            iconSize: 18,
                             onPressed: () => {},
                             icon: Image(
                                 image:
                                     photocontroller.getPhotoAsset('facebook')),
                           ),
                           IconButton(
-                            iconSize: 20,
+                            iconSize: 18,
                             onPressed: () => {},
                             icon: Image(
                                 image: photocontroller.getPhotoAsset('google')),
                           ),
                           IconButton(
-                            iconSize: 20,
+                            iconSize: 18,
                             onPressed: () => {},
                             icon: Image(
                                 image:
@@ -176,15 +178,16 @@ class _LoginpageState extends State<Loginpage> {
                           Text(
                             'Dont\'t have an account?',
                             style: TextStyle(
-                                fontSize: 14.sp,
-                                color: Theme.of(context).primaryColor),
+                                fontSize: 17.sp,
+                                color: Theme.of(context).canvasColor),
                           ),
                           TextButton(
                               onPressed: () => enterSignUpPage(context),
                               child: Text(
                                 'Sign up',
                                 style: TextStyle(
-                                    fontSize: 14.sp, color: Color(0xFFFBEB5E)),
+                                    fontSize: 17.sp,
+                                    color: const Color(0xFFFBEB5E)),
                               ))
                         ],
                       )
