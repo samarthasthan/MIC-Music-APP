@@ -47,11 +47,8 @@ dependencies:
   flutter_screenutil: ^5.7.0
   google_fonts: ^4.0.3
   image_picker: ^0.8.7+4
-  file_picker: ^5.2.9
-  drop_shadow_image: ^0.9.1
+  syncfusion_flutter_sliders: ^21.1.41
   transparent_image: ^2.0.1
-
-
 
 dev_dependencies:
   flutter_test:
@@ -104,6 +101,14 @@ flutter:
     - assets/images/Image12.png
     - assets/images/Image13.png
     - assets/images/Image14.png
+    - assets/images/RadioImage1.png
+    - assets/images/RadioImage2.png
+    - assets/images/RadioImage3.png
+    - assets/images/RadioPopular1.png
+    - assets/images/RadioPopular2.png
+    - assets/images/RadioPopular3.png
+    - assets/images/RadioPlay1.png
+    - assets/images/RadioDetailsBackground.png
   #   - images/a_dot_ham.jpeg
 
   # assets:
@@ -122,9 +127,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-      - family: CustomIcons
-        fonts:
-          - asset: fonts/CustomIcons.ttf
+    - family: CustomIcons
+      fonts:
+        - asset: fonts/CustomIcons.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
