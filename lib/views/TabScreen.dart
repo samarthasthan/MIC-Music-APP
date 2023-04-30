@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:micmusic/constants.dart';
 import 'package:micmusic/views/Accounts.dart';
+import 'package:micmusic/views/Radio.dart';
 import 'package:micmusic/views/homePageView.dart';
 
 class TabScreenView extends StatefulWidget {
@@ -24,10 +25,13 @@ class _TabScreenViewState extends State<TabScreenView> {
 
   Widget build(BuildContext context) {
     Widget activePage = HomePageView();
-    
+    if (_selectedPageIndex == 2) {
+      activePage = RadioView();
+    }
     if (_selectedPageIndex == 3) {
       activePage = Account();
     }
+
     return Scaffold(
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
