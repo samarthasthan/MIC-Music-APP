@@ -1,7 +1,6 @@
 {
-
-    "name": "micmusic",
-    "short_name": "micmusic",
+    "name": "mic_geezo_explore",
+    "short_name": "mic_geezo_explore",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

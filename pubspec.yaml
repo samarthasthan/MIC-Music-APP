@@ -1,6 +1,4 @@
-
-name: micmusic
-
+name: mic_geezo_explore
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -21,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.5 <3.0.0'
+  sdk: '>=2.19.6 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -32,30 +30,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
- 
-  flutter_media_metadata: ^1.0.0+1
-  mvc_pattern: ^8.12.0
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
-  flutter_otp_text_field: ^1.1.1
-  
-  flutter_screenutil: ^5.7.0
-  google_fonts: ^4.0.3
-  image_picker: ^0.8.7+4
-  file_picker: ^5.2.9
-  drop_shadow_image: ^0.9.1
-  transparent_image: ^2.0.1
-
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+  mvc_pattern: ^8.12.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -76,39 +62,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-
   assets:
-    - assets/images/
-    - assets/images/ProfilePic.png
-    - assets/img/DP.png
-    - assets/img/album.svg
-    - assets/img/download.svg
-    - assets/img/playlist.svg
-    - assets/img/artist.svg
-    - assets/img/video_library.svg
-    - assets/img/Image1.png
-    - assets/img/Image2.png
-    - assets/img/Image3.png
-    - assets/img/Image4.png
-    - assets/img/Image5.png
-    - assets/img/Image6.png
-    - assets/img/Image7.png
-    - assets/img/Image8.png
-    - assets/images/Image1.png
-    - assets/images/Image9.png
-    - assets/images/Image3.png
-    - assets/images/Image5.png
-    - assets/images/Image6.png
-    - assets/images/Image10.png
-    - assets/images/Image11.png
-    - assets/images/Image12.png
-    - assets/images/Image13.png
-    - assets/images/Image14.png
+    - images/
   #   - images/a_dot_ham.jpeg
-
-  # assets:
-  #   - assets/music_data/In The End Best Song Download(SongsZilla.Net).mp3
-
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -121,10 +77,6 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-      - family: CustomIcons
-        fonts:
-          - asset: fonts/CustomIcons.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

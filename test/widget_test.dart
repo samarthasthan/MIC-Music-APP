@@ -8,9 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-
-import 'package:micmusic/main.dart';
-
+import 'package:mic_geezo_explore/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

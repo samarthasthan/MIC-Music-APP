@@ -1,9 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
-    package="com.example.micmusic">
+    package="com.example.mic_geezo_explore">
    <application
-        android:label="micmusic"
-
+        android:label="mic_geezo_explore"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
