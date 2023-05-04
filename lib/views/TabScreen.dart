@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:micmusic/constants.dart';
 import 'package:micmusic/views/Accounts.dart';
 import 'package:micmusic/views/homePageView.dart';
+import 'package:micmusic/views/music_Screen.dart';
 
 class TabScreenView extends StatefulWidget {
   const TabScreenView({super.key});
@@ -24,7 +25,7 @@ class _TabScreenViewState extends State<TabScreenView> {
 
   Widget build(BuildContext context) {
     Widget activePage = HomePageView();
-    
+
     if (_selectedPageIndex == 3) {
       activePage = Account();
     }

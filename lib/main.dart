@@ -38,7 +38,6 @@ class MyApp extends StatelessWidget {
               primary: Color(0xFF0E0B1F),
               secondary: Color(0xFFCBFB5E),
             ),
-            useMaterial3: true,
           ),
           home: child,
           initialRoute: '/',

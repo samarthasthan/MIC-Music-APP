@@ -8,6 +8,8 @@ Color backGroundColor = Color(0xFF0E0B1F);
 
 Color iconColor = const Color(0xFFEEEEEE);
 
+Color AppColor = const Color(0xFFCBFB5E);
+
 
 
 TextTheme textTheme = TextTheme(
