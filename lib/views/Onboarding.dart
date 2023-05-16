@@ -1,9 +1,10 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:ui';
-import 'package:music_app/constants.dart';
+import 'package:mic_music_app/constants.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -152,17 +153,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     body: Column(
                       children: [
                         Container(
-                          child: Image.asset(
-                            "assets/images/3.png",
-                            height: 407,
-                          ),
-                        ),
+                            height: 380,
+                            width: 418,
+                            child: Image.asset(
+                              "assets/images/3.png",
+                              fit: BoxFit.cover,
+                            )),
                         Container(
                             color: Color.fromARGB(255, 14, 11, 31),
-                            height: 276.4,
+                            height: 303.4,
                             child: Column(children: [
                               SizedBox(
-                                height: 30,
+                                height: 15,
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 14.0),
@@ -204,7 +206,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 padding: const EdgeInsets.only(left: 14.0),
                                 child: Container(
                                   alignment: Alignment.bottomLeft,
-                                  child: SizedBox(
+                                  child: const SizedBox(
                                     width: 276.4,
                                     child: Text(
                                         'Make your design workflow easier and save your time',

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mic_music_app/main.dart';
 
 const brand2 = Color(0xFF0E0B1F);
 const brand1 = Color(0xFFCBFB5E);
