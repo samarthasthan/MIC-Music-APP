@@ -29,7 +29,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: brand2,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(

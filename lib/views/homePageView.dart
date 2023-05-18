@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:micmusic/views/music_Screen.dart';
 import '/constants.dart';
 import '/controllers/homepageController.dart';
 import '/views/searchHome.dart';
@@ -229,68 +230,75 @@ class _HomePageViewState extends State<HomePageView> {
         ),
       ),
       persistentFooterButtons: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              height: 50.h,
-              width: 50.w,
-              child: CircleAvatar(
-                child: ClipOval(
-                  child: Image(
-                    image: NetworkImage(
-                        'https://indiater.com/wp-content/uploads/2021/06/Free-Music-Album-Cover-Art-Banner-Photoshop-Template-1024x1024.jpg'),
-                    fit: BoxFit.cover,
+        InkWell(
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SwappablePages()));
+          },
+          child: Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 50.h,
+                  width: 50.w,
+                  child: CircleAvatar(
+                    child: ClipOval(
+                      child: Image(
+                        image: NetworkImage(
+                            'https://indiater.com/wp-content/uploads/2021/06/Free-Music-Album-Cover-Art-Banner-Photoshop-Template-1024x1024.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-            Text("Come Back Home", style: Constants.head),
-            IconButton(
-              icon: Icon(
-                Icons.skip_previous_outlined,
-                size: 20.w,
-                color: neutral1,
-              ),
-              onPressed: () {
-                // handle back button press here
-              },
-            ),
-            Container(
-              width: 40.w,
-              height: 40.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(
-                  color: neutral1.withOpacity(1),
-                  width: 1.w,
+                Text("Come Back Home", style: Constants.head),
+                IconButton(
+                  icon: Icon(
+                    Icons.skip_previous_outlined,
+                    size: 20.w,
+                    color: neutral1,
+                  ),
+                  onPressed: () {
+                    // handle back button press here
+                  },
                 ),
-              ),
-              child: IconButton(
-                icon: Icon(
-                  Icons.play_arrow,
-                  size: 20.w,
-                  color: neutral1,
+                Container(
+                  width: 40.w,
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100.w),
+                    border: Border.all(
+                      color: neutral1.withOpacity(1),
+                      width: 1.w,
+                    ),
+                  ),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.play_arrow,
+                      size: 20.w,
+                      color: neutral1,
+                    ),
+                    onPressed: () {
+                      // handle play button press here
+                    },
+                  ),
                 ),
-                onPressed: () {
-                  // handle play button press here
-                },
-              ),
+                IconButton(
+                  icon: Icon(
+                    Icons.skip_next_outlined,
+                    size: 20.w,
+                    color: neutral1,
+                  ),
+                  onPressed: () {
+                    // handle next button press here
+                  },
+                ),
+              ],
             ),
-            IconButton(
-              icon: Icon(
-                Icons.skip_next_outlined,
-                size: 20.w,
-                color: neutral1,
-              ),
-              onPressed: () {
-                // handle next button press here
-              },
-            ),
-          ],
+          ),
         )
       ],
-      
     );
   }
 }
