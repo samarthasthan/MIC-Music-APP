@@ -13,6 +13,7 @@ import 'views/loginPage.dart';
 import './views/homePageView.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:drop_shadow_image/drop_shadow_image.dart';
+import './views/Onboarding.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
           home: child,
           initialRoute: '/',
           routes: {
-            '/': (context) => Loginpage(),
+            '/': (context) => OnboardingScreen(),
             '/accounts': (context) => Account(),
             '/settings': (context) => const Settings(),
             '/edit': (context) => const Edit(),

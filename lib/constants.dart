@@ -94,6 +94,12 @@ class Constants {
     fontWeight: FontWeight.bold,
     color: neutral1,
   );
+  static  TextStyle startButton = TextStyle(
+    fontFamily: 'Roboto',
+    fontSize: 16.sp,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
 
   static  TextStyle musicSubTitle = TextStyle(
     fontFamily: 'Roboto',
