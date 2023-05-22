@@ -11,6 +11,14 @@ import 'SubTopics.dart';
 class Explore extends State<MyApp> {
 
   int _index=0;
+
+  int _selectedPageIndex = 0;
+
+  void _selectPage(int index) {
+    setState(() {
+      _selectedPageIndex = index;
+    });
+  }
   
 
   // This widget is the root of your application.
@@ -20,7 +28,7 @@ class Explore extends State<MyApp> {
       debugShowCheckedModeBanner: false,
 
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: const Color(0x0020242f),
       
         appBar: AppBar(backgroundColor: Colors.black),
       
@@ -57,8 +65,9 @@ class Explore extends State<MyApp> {
                           
                           child:  Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
+                            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [Row(
+                                children : [
                                 //ImageIcon(chart_assets[index] as ImageProvider<Object>?),
                                 Text('${index+1}   ', style: const TextStyle(color: Colors.white)),
                                 IconButton(onPressed: (){}, icon: Image.asset(chart_assets[index]), iconSize: 30),
@@ -67,7 +76,8 @@ class Explore extends State<MyApp> {
                                     Text(charts[index], style: const TextStyle(color: Colors.white)),
                                     Text(chart_artists[index], style: const TextStyle(color: Color.fromARGB(255, 201, 196, 178,), fontSize: 12))
                                   ],
-                                ),
+                                ),]),
+                                 IconButton(onPressed: (){}, icon: const Icon(Icons.more_horiz, color: Colors.white,))
                               ],
                             ),
                           ),
@@ -87,12 +97,12 @@ class Explore extends State<MyApp> {
 
               SizedBox(
                 height: 150, // card height
-                child: PageView.builder(
+                child: PageView.builder( 
                   itemCount: 3,
                   controller: PageController(viewportFraction: 0.7),
                   onPageChanged: (int index) => setState(() => _index = index),
                   itemBuilder: (_, i) {
-                    return Transform.scale(
+                    return Transform.scale( 
                       scale: i == _index ? 1 : 0.9,
                       child: Stack(
                         children: [Container(
@@ -105,7 +115,7 @@ class Explore extends State<MyApp> {
                         ), 
                         Container(
                           alignment: Alignment.bottomLeft,
-                          child: Column(
+                          child: Column( 
                             children: [
                               Text(trending_songs[_index], style: const TextStyle(color: Colors.white)),
                               Text(trending_artists[_index], style: const TextStyle(color: Color.fromARGB(255, 201, 196, 178,), fontSize: 12))
@@ -143,6 +153,7 @@ class Explore extends State<MyApp> {
                 ],
               ),
             
+
             GridView.count(crossAxisCount: 3,
             crossAxisSpacing: 5.0,
             mainAxisSpacing: 5.0,
@@ -153,12 +164,51 @@ class Explore extends State<MyApp> {
                 Navigator.push(
                 context, MaterialPageRoute(builder: (context) => const SubTopics()));
                 }
-                , icon: Image.asset(topics[index])));
+                , icon: Stack(
+                  children: [
+                    Container(alignment: Alignment.center,
+                    child: Image.asset(topics[index]),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      child: Text(topic_genres[index], style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),)
+                    )
+                  ],
+                )
+                )
+                );
             }))
 
             ],
           ),
         ),
+
+        bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, // Fixed
+        backgroundColor: const Color(0xFF0E0B1F),
+        selectedItemColor: const Color(0xFFCBFB5E),
+        unselectedItemColor: const Color(0xFF71737B),
+        onTap: _selectPage,
+        currentIndex: _selectedPageIndex,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            label: 'Categories',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.place_outlined),
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.radio_outlined),
+            label: 'Radio',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: 'Account',
+          ),
+        ],
+      ),
       
       ),
     );

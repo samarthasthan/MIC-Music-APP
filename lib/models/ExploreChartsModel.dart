@@ -21,3 +21,12 @@ final chart_assets = [
   'images/ch4.jpeg',
   'images/ch5.jpeg',
   ];
+
+final topic_genres = [
+  'Pop',
+  'Rap',
+  'Jazz',
+  'RnB',
+  'Dance',
+  'Ballad'
+  ];
